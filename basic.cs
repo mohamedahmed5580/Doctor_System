@@ -48,7 +48,6 @@ namespace Hospital.Forms
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
         private void OpenNewFormAndCloseCurrent(Form newForm)
         {
@@ -81,6 +80,11 @@ namespace Hospital.Forms
         {
             programers p = new programers();
             p.Show();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

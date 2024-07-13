@@ -22,9 +22,6 @@
     <Compile Update="programers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Report.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Reservations.cs">
       <SubType>Form</SubType>
     </Compile>

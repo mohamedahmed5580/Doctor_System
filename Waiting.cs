@@ -99,10 +99,23 @@ namespace Doctor_System
             Reservations reservations = new Reservations();
             reservations.idpp.Text = dataGridView_show2.CurrentRow.Cells[1].Value.ToString();
             reservations.namepp.Text = dataGridView_show2.CurrentRow.Cells[2].Value.ToString();
-            reservations.type.Text = dataGridView_show2.CurrentRow.Cells[7].Value.ToString();
-            reservations.datein.Text = dataGridView_show2.CurrentRow.Cells[10].Value.ToString();
+            reservations.type.Text = dataGridView_show2.CurrentRow.Cells[6].Value.ToString();
+
+            // Parse the date and format it
+            string fullDateTimeString = dataGridView_show2.CurrentRow.Cells[10].Value.ToString();
+            DateTime parsedDate;
+            if (DateTime.TryParse(fullDateTimeString, out parsedDate))
+            {
+                reservations.datein.Text = parsedDate.ToString("dd/MM/yyyy");
+            }
+            else
+            {
+                // Handle the case where parsing fails
+                reservations.datein.Text = "Invalid Date";
+            }
+
             reservations.location.Text = dataGridView_show2.CurrentRow.Cells[5].Value.ToString();
-            reservations.Show();    
+            reservations.Show();
         }
     }
 }

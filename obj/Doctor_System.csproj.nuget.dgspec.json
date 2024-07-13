@@ -44,6 +44,26 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "MetroFramework": {
+              "target": "Package",
+              "version": "[1.2.0.3, )"
+            },
+            "MetroFramework.Design": {
+              "target": "Package",
+              "version": "[1.2.0.3, )"
+            },
+            "MetroFramework.Fonts": {
+              "target": "Package",
+              "version": "[1.2.0.3, )"
+            },
+            "MetroFramework.RunTime": {
+              "target": "Package",
+              "version": "[1.2.0.3, )"
+            },
+            "MetroModernUI": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.6, )"

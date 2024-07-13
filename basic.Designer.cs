@@ -86,6 +86,7 @@
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 7;
             pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // button4
             // 
@@ -164,13 +165,13 @@
             // الشركةToolStripMenuItem
             // 
             الشركةToolStripMenuItem.Name = "الشركةToolStripMenuItem";
-            الشركةToolStripMenuItem.Size = new Size(224, 26);
+            الشركةToolStripMenuItem.Size = new Size(153, 26);
             الشركةToolStripMenuItem.Text = "الشركة";
             // 
             // المبرمجينToolStripMenuItem
             // 
             المبرمجينToolStripMenuItem.Name = "المبرمجينToolStripMenuItem";
-            المبرمجينToolStripMenuItem.Size = new Size(224, 26);
+            المبرمجينToolStripMenuItem.Size = new Size(153, 26);
             المبرمجينToolStripMenuItem.Text = "المبرمجين";
             المبرمجينToolStripMenuItem.Click += المبرجينToolStripMenuItem_Click;
             // 
