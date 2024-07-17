@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adding_revenue));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -45,9 +46,9 @@
             label1.BackColor = SystemColors.MenuHighlight;
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label1.Location = new Point(169, 95);
+            label1.Location = new Point(169, 119);
             label1.Name = "label1";
-            label1.Size = new Size(153, 79);
+            label1.Size = new Size(153, 50);
             label1.TabIndex = 34;
             label1.Text = "الايراد اليومي";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -58,9 +59,9 @@
             label2.BackColor = SystemColors.MenuHighlight;
             label2.BorderStyle = BorderStyle.FixedSingle;
             label2.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            label2.Location = new Point(169, 241);
+            label2.Location = new Point(169, 257);
             label2.Name = "label2";
-            label2.Size = new Size(153, 79);
+            label2.Size = new Size(153, 49);
             label2.TabIndex = 35;
             label2.Text = "المصروفات";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -70,9 +71,9 @@
             label3.BackColor = SystemColors.MenuHighlight;
             label3.BorderStyle = BorderStyle.FixedSingle;
             label3.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            label3.Location = new Point(185, 381);
+            label3.Location = new Point(185, 404);
             label3.Name = "label3";
-            label3.Size = new Size(137, 79);
+            label3.Size = new Size(137, 52);
             label3.TabIndex = 36;
             label3.Text = "الكاش";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -82,9 +83,9 @@
             label4.BackColor = SystemColors.MenuHighlight;
             label4.BorderStyle = BorderStyle.FixedSingle;
             label4.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label4.Location = new Point(185, 541);
+            label4.Location = new Point(152, 565);
             label4.Name = "label4";
-            label4.Size = new Size(137, 79);
+            label4.Size = new Size(178, 51);
             label4.TabIndex = 37;
             label4.Text = "الفودافون كاش";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -162,7 +163,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(192, 192, 255);
+            BackColor = Color.AliceBlue;
             ClientSize = new Size(1568, 1033);
             Controls.Add(button1);
             Controls.Add(button2);
@@ -174,6 +175,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "Adding_revenue";
             RightToLeft = RightToLeft.Yes;

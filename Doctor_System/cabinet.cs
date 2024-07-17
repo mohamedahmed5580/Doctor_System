@@ -16,7 +16,6 @@ namespace Lawyer_Sys
 {
     public partial class cabinet : Form
     {
-        SqlConnection con = new SqlConnection("server=MOHAMEDBEKO\\MSSQLSERVER01;database=Lawyer_System1;integrated security=true");
         public cabinet()
         {
             InitializeComponent();

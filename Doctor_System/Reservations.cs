@@ -13,6 +13,8 @@ using System.Drawing.Printing;
 using Hospital.Forms;
 using DGVPrinterHelper;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
+using System.Xml.Linq;
 
 namespace Doctor_System
 {
@@ -20,6 +22,7 @@ namespace Doctor_System
     {
 
         PrintDocument printDocument = new PrintDocument();
+        SqlConnection con = new SqlConnection("server=MOHAMEDBEKO\\MSSQLSERVER01;database=Hospital;integrated security=true");
 
 
         public Reservations()
@@ -35,6 +38,7 @@ namespace Doctor_System
         private void add_btn_Click(object sender, EventArgs e)
         {
 
+
             printDocument.PrintPage += PrintDocument_PrintPage;
             PrintDialog printDialog = new PrintDialog
             {
@@ -45,6 +49,16 @@ namespace Doctor_System
             {
                 printDocument.Print();
             }
+            this.Hide();
+        }
+
+        private void OpenNewForm(Form newForm)
+        {
+            newForm.FormClosed += (s, args) => this.Close();
+            newForm.Show();
+            this.Hide();
+            con.Close();
+
         }
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
@@ -83,7 +97,7 @@ namespace Doctor_System
             }
 
             // Method to draw text inside a rectangle with dynamic height and language-based alignment
-          
+
 
             // Print the title with larger font
             string title = "تقرير الطبي";
@@ -106,7 +120,7 @@ namespace Doctor_System
         "جنس المريض: " + type.Text,
         "عنوان المريض: " + location.Text,
         "تاريخ المريض: " + datein.Text,
-        "نوع المرض: " + typeoflay.Text,
+        "نوع المرض: " + Disease.Text,
         "العلاجات: " + richTextBox1.Text
     };
 
@@ -122,6 +136,9 @@ namespace Doctor_System
             }
 
             y += margin; // Space between sections
+
+            this.Hide();
+
         }
 
 
@@ -137,6 +154,62 @@ namespace Doctor_System
         }
 
         private void typeoflay_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                string name = namepp.Text; // Assuming you have a TextBox for Name
+                int pid = int.Parse(idpp.Text); // Assuming you have a TextBox for PID
+                string description = richTextBox1.Text; // Assuming you have a TextBox for Description
+                int quantityy = int.Parse(quantity.Text); // Assuming you have a TextBox for Quantity
+                string Diseases = Disease.Text; // Assuming you have a TextBox for PatientPID
+
+
+                string query = @"INSERT INTO prescription ( Name, PID, Description, Quantity, Disease)
+                     VALUES (@Name, @PID, @Description, @Quantity, @Disease)";
+
+                con.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Name", name);
+                    cmd.Parameters.AddWithValue("@PID", pid);
+                    cmd.Parameters.AddWithValue("@Description", description);
+                    cmd.Parameters.AddWithValue("@Quantity", quantityy);
+                    cmd.Parameters.AddWithValue("@Disease", Diseases);
+                    MessageBox.Show($"تمت اضافة الكشف ينجاح");
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
+        private void namepp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }

@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Printing;
 namespace Lawyer_Sys
 {
     public partial class cabinet_report : Form

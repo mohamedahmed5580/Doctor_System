@@ -16,16 +16,25 @@
     <Compile Update="cabinet_report.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="editPrescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Patients.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="programers.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Reservations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Patients.cs">
+    <Compile Update="Statements.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Waiting.cs">

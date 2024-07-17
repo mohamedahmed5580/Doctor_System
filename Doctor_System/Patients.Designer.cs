@@ -583,7 +583,7 @@
             dataGridView_show.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             dataGridView_show.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_show.GridColor = SystemColors.HighlightText;
-            dataGridView_show.Location = new Point(607, 23);
+            dataGridView_show.Location = new Point(607, 24);
             dataGridView_show.Margin = new Padding(3, 4, 3, 4);
             dataGridView_show.Name = "dataGridView_show";
             dataGridView_show.RowHeadersWidth = 40;
@@ -678,7 +678,7 @@
             RightToLeft = RightToLeft.Yes;
             RightToLeftLayout = true;
             StartPosition = FormStartPosition.Manual;
-            Text = "Form1";
+            Text = "المرضي";
             WindowState = FormWindowState.Maximized;
             Load += Patients_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView_show).EndInit();

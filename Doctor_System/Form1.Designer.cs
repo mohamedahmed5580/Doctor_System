@@ -34,11 +34,11 @@
             label2 = new Label();
             label3 = new Label();
             label5 = new Label();
-            name = new TextBox();
             password = new TextBox();
             button2 = new Button();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
+            name = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -51,7 +51,7 @@
             label1.ForeColor = Color.Lime;
             label1.Location = new Point(837, 136);
             label1.Name = "label1";
-            label1.Size = new Size(279, 60);
+            label1.Size = new Size(283, 60);
             label1.TabIndex = 1;
             label1.Text = " عيادة دكتور   ";
             // 
@@ -97,16 +97,6 @@
             label5.Size = new Size(186, 42);
             label5.TabIndex = 6;
             label5.Text = "كلمة المرور:";
-            // 
-            // name
-            // 
-            name.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            name.Location = new Point(237, 503);
-            name.Margin = new Padding(3, 4, 3, 4);
-            name.Multiline = true;
-            name.Name = "name";
-            name.Size = new Size(308, 59);
-            name.TabIndex = 7;
             // 
             // password
             // 
@@ -155,6 +145,16 @@
             pictureBox3.TabIndex = 11;
             pictureBox3.TabStop = false;
             // 
+            // name
+            // 
+            name.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            name.Location = new Point(237, 503);
+            name.Margin = new Padding(3, 4, 3, 4);
+            name.Multiline = true;
+            name.Name = "name";
+            name.Size = new Size(308, 59);
+            name.TabIndex = 7;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -191,10 +191,10 @@
         private Label label2;
         private Label label3;
         private Label label5;
-        private TextBox name;
         private TextBox password;
         private Button button2;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        private TextBox name;
     }
 }

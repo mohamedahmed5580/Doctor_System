@@ -96,7 +96,7 @@ namespace Doctor_System
         {
 
             string query = @"UPDATE Patients 
-                         SET Name = @Name, Payments = @Payments, Address = @Address, Type = @Type, Age = @Age,Type_Examination = @Type_Examination, Phone = @Phone, Description = @Description 
+                         SET Name = @Name, Payments = @Payments, Address = @Address, Type = @Type, Age = @Age,Type_Examination = @Type_Examination, Phone = @Phone, Description = @Description ,date=@date
                          WHERE PID = @PID";
 
             try
@@ -114,6 +114,7 @@ namespace Doctor_System
                     cmd.Parameters.AddWithValue("@Age", int.Parse(age.Text));
                     cmd.Parameters.AddWithValue("@Phone", numberp.Text);
                     cmd.Parameters.AddWithValue("@Description", description.Text);
+                    cmd.Parameters.AddWithValue("@date", dateTimePicker1.Value);
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("تم تعديل معلومات المريض");
@@ -182,7 +183,7 @@ namespace Doctor_System
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show($"Error: ادخل بيانات المريض");
+                        MessageBox.Show($"المريض موجود مسبقا");
                     }
 
                 }
@@ -435,7 +436,7 @@ namespace Doctor_System
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show($"Error: {ex.Message}");
+                        MessageBox.Show($"المريض موجود مسبقا");
                     }
                 }
             }
@@ -444,13 +445,14 @@ namespace Doctor_System
         private void waiting_btn_Click(object sender, EventArgs e)
         {
 
-            int maxWID = GetMaxWID();
-            int newWID = maxWID + 1;
-
-            string query = @"insert into [dbo].[WaitingList](WID,PID) values (@WID,@PID)";
 
             try
             {
+                int maxWID = GetMaxWID();
+                int newWID = maxWID + 1;
+
+                string query = @"insert into [dbo].[WaitingList](WID,PID) values (@WID,@PID)";
+
                 con.Open();
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
@@ -469,7 +471,7 @@ namespace Doctor_System
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"لقد تمت إضافة المريض بالفعل ");
             }
             con.Close();
 

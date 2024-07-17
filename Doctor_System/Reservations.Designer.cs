@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reservations));
             label1 = new Label();
             idpp = new TextBox();
             label9 = new Label();
-            namepp = new TextBox();
             label2 = new Label();
             label11 = new Label();
-            type = new TextBox();
             datein = new TextBox();
             location = new TextBox();
             label3 = new Label();
@@ -42,7 +41,12 @@
             add_btn = new Button();
             richTextBox1 = new RichTextBox();
             label17 = new Label();
-            typeoflay = new TextBox();
+            Disease = new TextBox();
+            label4 = new Label();
+            quantity = new TextBox();
+            button1 = new Button();
+            type = new TextBox();
+            namepp = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -78,18 +82,6 @@
             label9.TabIndex = 102;
             label9.Text = "اسم المريض:";
             // 
-            // namepp
-            // 
-            namepp.BackColor = Color.White;
-            namepp.Font = new Font("Segoe UI", 13F);
-            namepp.Location = new Point(234, 29);
-            namepp.Margin = new Padding(3, 4, 3, 4);
-            namepp.Name = "namepp";
-            namepp.PlaceholderText = "الاسم";
-            namepp.ReadOnly = true;
-            namepp.Size = new Size(408, 36);
-            namepp.TabIndex = 101;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -109,18 +101,6 @@
             label11.Size = new Size(150, 36);
             label11.TabIndex = 130;
             label11.Text = " نوع الكشف:";
-            // 
-            // type
-            // 
-            type.BackColor = Color.White;
-            type.Font = new Font("Segoe UI", 13F);
-            type.Location = new Point(234, 93);
-            type.Margin = new Padding(3, 4, 3, 4);
-            type.Name = "type";
-            type.PlaceholderText = "نوع الكشف";
-            type.ReadOnly = true;
-            type.Size = new Size(408, 36);
-            type.TabIndex = 131;
             // 
             // datein
             // 
@@ -169,12 +149,12 @@
             // add_btn
             // 
             add_btn.AccessibleRole = AccessibleRole.Clock;
-            add_btn.BackColor = Color.Lime;
+            add_btn.BackColor = Color.Cyan;
             add_btn.BackgroundImageLayout = ImageLayout.Center;
             add_btn.FlatStyle = FlatStyle.Flat;
             add_btn.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             add_btn.ForeColor = SystemColors.Desktop;
-            add_btn.Location = new Point(968, 377);
+            add_btn.Location = new Point(1000, 546);
             add_btn.Name = "add_btn";
             add_btn.Size = new Size(243, 42);
             add_btn.TabIndex = 163;
@@ -201,24 +181,90 @@
             label17.TabIndex = 160;
             label17.Text = "نوع المرض:";
             // 
-            // typeoflay
+            // Disease
             // 
-            typeoflay.BackColor = Color.White;
-            typeoflay.Font = new Font("Segoe UI", 13F);
-            typeoflay.Location = new Point(891, 168);
-            typeoflay.Margin = new Padding(3, 4, 3, 4);
-            typeoflay.Name = "typeoflay";
-            typeoflay.PlaceholderText = "نوع المرض";
-            typeoflay.Size = new Size(286, 36);
-            typeoflay.TabIndex = 172;
-            typeoflay.TextChanged += typeoflay_TextChanged;
+            Disease.BackColor = Color.White;
+            Disease.Font = new Font("Segoe UI", 13F);
+            Disease.Location = new Point(891, 168);
+            Disease.Margin = new Padding(3, 4, 3, 4);
+            Disease.Name = "Disease";
+            Disease.PlaceholderText = "نوع المرض";
+            Disease.Size = new Size(286, 36);
+            Disease.TabIndex = 172;
+            Disease.TextChanged += typeoflay_TextChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 26F, FontStyle.Bold, GraphicsUnit.Pixel);
+            label4.Location = new Point(727, 244);
+            label4.Name = "label4";
+            label4.Size = new Size(141, 36);
+            label4.TabIndex = 174;
+            label4.Text = "عدد المرات:";
+            // 
+            // quantity
+            // 
+            quantity.BackColor = Color.White;
+            quantity.Font = new Font("Segoe UI", 13F);
+            quantity.Location = new Point(896, 244);
+            quantity.Margin = new Padding(3, 4, 3, 4);
+            quantity.Name = "quantity";
+            quantity.Size = new Size(147, 36);
+            quantity.TabIndex = 173;
+            quantity.TextChanged += textBox1_TextChanged;
+            // 
+            // button1
+            // 
+            button1.AccessibleRole = AccessibleRole.Clock;
+            button1.BackColor = Color.Lime;
+            button1.BackgroundImageLayout = ImageLayout.Center;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button1.ForeColor = SystemColors.Desktop;
+            button1.Location = new Point(767, 546);
+            button1.Name = "button1";
+            button1.Size = new Size(124, 42);
+            button1.TabIndex = 175;
+            button1.Text = "حفظ";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // type
+            // 
+            type.BackColor = Color.White;
+            type.Font = new Font("Segoe UI", 13F);
+            type.Location = new Point(234, 93);
+            type.Margin = new Padding(3, 4, 3, 4);
+            type.Name = "type";
+            type.PlaceholderText = "نوع الكشف";
+            type.ReadOnly = true;
+            type.Size = new Size(408, 36);
+            type.TabIndex = 131;
+            // 
+            // namepp
+            // 
+            namepp.BackColor = Color.White;
+            namepp.Font = new Font("Segoe UI", 13F);
+            namepp.Location = new Point(234, 28);
+            namepp.Margin = new Padding(3, 4, 3, 4);
+            namepp.Name = "namepp";
+            namepp.PlaceholderText = "اسم المريض";
+            namepp.ReadOnly = true;
+            namepp.Size = new Size(408, 36);
+            namepp.TabIndex = 177;
             // 
             // Reservations
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.AliceBlue;
             ClientSize = new Size(1428, 667);
-            Controls.Add(typeoflay);
+            Controls.Add(namepp);
+            Controls.Add(button1);
+            Controls.Add(label4);
+            Controls.Add(quantity);
+            Controls.Add(Disease);
             Controls.Add(richTextBox1);
             Controls.Add(add_btn);
             Controls.Add(label17);
@@ -232,7 +278,7 @@
             Controls.Add(label1);
             Controls.Add(idpp);
             Controls.Add(label9);
-            Controls.Add(namepp);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Reservations";
             RightToLeft = RightToLeft.Yes;
             RightToLeftLayout = true;
@@ -247,10 +293,8 @@
         private Label label1;
         public TextBox idpp;
         private Label label9;
-        public TextBox namepp;
         private Label label2;
         private Label label11;
-        public TextBox type;
         public TextBox datein;
         public TextBox location;
         private Label label3;
@@ -258,6 +302,11 @@
         private Button add_btn;
         private RichTextBox richTextBox1;
         private Label label17;
-        public TextBox typeoflay;
+        public TextBox Disease;
+        private Label label4;
+        public TextBox quantity;
+        private Button button1;
+        public TextBox type;
+        public TextBox namepp;
     }
 }

@@ -21,17 +21,13 @@ namespace Hospital.Forms
 
         }
 
-        private void basic_Load(object sender, EventArgs e)
-        {
-
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
 
+
+        }
         private void button5_Click(object sender, EventArgs e)
         {
             OpenNewFormAndCloseCurrent(new cabinet());
@@ -58,10 +54,6 @@ namespace Hospital.Forms
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            OpenNewFormAndCloseCurrent(new Waiting());
-            /*
-                        Waiting waiting = new Waiting();
-                        waiting.Show();*/
 
 
         }
@@ -85,6 +77,54 @@ namespace Hospital.Forms
         private void pictureBox4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenNewFormAndCloseCurrent(new Statements());
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void basic_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            OpenNewFormAndCloseCurrent(new Waiting());
+            /*
+                        Waiting waiting = new Waiting();
+                        waiting.Show();*/
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenNewFormAndCloseCurrent(new Patients());
+            /*            Patients q = new Patients();
+            q.Show();*/
         }
     }
 }

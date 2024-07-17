@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cabinet));
             button3 = new Button();
             button1 = new Button();
             button2 = new Button();
@@ -37,9 +38,10 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            button3.Location = new Point(952, 243);
+            button3.Location = new Point(1264, 322);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(239, 137);
+            button3.Size = new Size(385, 183);
             button3.TabIndex = 8;
             button3.Text = "اضافة ايراد يومي";
             button3.UseVisualStyleBackColor = true;
@@ -48,9 +50,10 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            button1.Location = new Point(139, 243);
+            button1.Location = new Point(160, 322);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(223, 137);
+            button1.Size = new Size(508, 183);
             button1.TabIndex = 9;
             button1.Text = "التقرير الشامل واجمالي الصافي";
             button1.UseVisualStyleBackColor = true;
@@ -59,9 +62,10 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            button2.Location = new Point(547, 243);
+            button2.Location = new Point(784, 322);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(239, 137);
+            button2.Size = new Size(385, 183);
             button2.TabIndex = 10;
             button2.Text = "التقرير بالتاريخ";
             button2.UseVisualStyleBackColor = true;
@@ -75,10 +79,9 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(229, 543);
-            button4.Margin = new Padding(3, 2, 3, 2);
+            button4.Location = new Point(262, 724);
             button4.Name = "button4";
-            button4.Size = new Size(120, 44);
+            button4.Size = new Size(137, 59);
             button4.TabIndex = 88;
             button4.Text = "رجوع";
             button4.UseVisualStyleBackColor = false;
@@ -86,16 +89,19 @@
             // 
             // cabinet
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(1372, 775);
+            BackColor = Color.AliceBlue;
+            ClientSize = new Size(1568, 1033);
             Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(button3);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             Name = "cabinet";
             Text = "الخزنة";
+            WindowState = FormWindowState.Maximized;
             Load += cabinet_Load;
             ResumeLayout(false);
         }

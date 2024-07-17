@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Waiting));
             dataGridView_show2 = new DataGridView();
             button4 = new Button();
             button2 = new Button();
@@ -102,11 +103,12 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-            ClientSize = new Size(1928, 860);
+            ClientSize = new Size(1924, 860);
             Controls.Add(button5);
             Controls.Add(button2);
             Controls.Add(button4);
             Controls.Add(dataGridView_show2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Waiting";
             RightToLeft = RightToLeft.Yes;
             RightToLeftLayout = true;
